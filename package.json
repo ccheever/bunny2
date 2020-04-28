@@ -7,5 +7,9 @@
   "license": "MIT",
   "devDependencies": {
     "project-repl": "^1.6.0"
+  },
+  "dependencies": {
+    "@now/node": "^1.5.1",
+    "express": "^4.17.1"
   }
 }
