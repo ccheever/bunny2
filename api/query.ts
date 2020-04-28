@@ -1,6 +1,6 @@
 import { NowRequest, NowResponse } from '@now/node';
 import { commands as myCommands } from './commands';
-import { encode } from './encode';
+import { encode } from './commandUtils';
 
 let defaultCommands = {
   about: 'https://github.com/ccheever/bunny2/blob/master/README.md',
@@ -38,14 +38,16 @@ export default (req: NowRequest, res: NowResponse) => {
         res.setHeader('Location', goto);
         res.status(307);
         res.send('');
+        break;
       case 'json':
         res.json(goto[1]);
         break;
       case 'text':
         res.setHeader('Content-Type', 'text/plain');
-        res.send(goto[1]);
+        res.send('' + goto[1]);
+        break;
       case 'html':
-        res.send(goto[1]);
+        res.send('' + goto[1]);
         break;
       case 'error':
       default:

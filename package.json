@@ -5,6 +5,11 @@
   "repository": "https://github.com/ccheever/bunny2.git",
   "author": "Charlie Cheever <ccheever@gmail.com>",
   "license": "MIT",
+  "repl": {
+     "ignore": {
+       "modules": ["@now/node"]
+     }
+  },
   "devDependencies": {
     "project-repl": "^1.6.0"
   },
