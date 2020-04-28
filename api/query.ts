@@ -1,14 +1,6 @@
 import { NowRequest, NowResponse } from '@now/node';
-
-let myCommands = {
-  expo: 'https://github.com/expo/expo',
-  universe: 'https://github.com/expo/universe',
-  'expo-cli': 'https://github.com/expo/expo-cli',
-};
-
-function encode(arg) {
-  return encodeURIComponent(arg).replace(/%20/g, '+');
-}
+import { commands as myCommands } from './commands';
+import { encode } from './encode';
 
 let defaultCommands = {
   about: 'https://github.com/ccheever/bunny2/blob/master/README.md',
