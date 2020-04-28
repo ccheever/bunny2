@@ -1,0 +1,11 @@
+{
+  "name": "bunny2",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/ccheever/bunny2.git",
+  "author": "Charlie Cheever <ccheever@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "project-repl": "^1.6.0"
+  }
+}
