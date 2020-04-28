@@ -1,8 +1,6 @@
 import { NowRequest, NowResponse } from '@now/node';
 
-let commands = {
-  yt: (arg) => 'https://www.youtube.com/results?search_query=' + encode(arg),
-  wp: (arg) => 'https://en.wikipedia.org/w/index.php?search=' + encode(arg),
+let myCommands = {
   expo: 'https://github.com/expo/expo',
   universe: 'https://github.com/expo/universe',
   'expo-cli': 'https://github.com/expo/expo-cli',
@@ -11,6 +9,14 @@ let commands = {
 function encode(arg) {
   return encodeURIComponent(arg).replace(/%20/g, '+');
 }
+
+let defaultCommands = {
+  about: 'https://github.com/ccheever/bunny2/blob/master/README.md',
+  yt: (arg) => 'https://www.youtube.com/results?search_query=' + encode(arg),
+  wp: (arg) => 'https://en.wikipedia.org/w/index.php?search=' + encode(arg),
+};
+
+let commands = { ...defaultCommands, ...myCommands };
 
 export default (req: NowRequest, res: NowResponse) => {
   let q: string = '' + req.query.q || '';
